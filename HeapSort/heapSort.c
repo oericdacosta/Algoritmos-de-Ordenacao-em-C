@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <time.h>
-#define tamVetor 100000
+#define tamVetor 1000
 /*Funções para ordenar um vetor*/
 void heapsort(int *vet, int n);
 void peneira(int *vet, int raiz, int fundo);
@@ -14,14 +13,10 @@ void vetorDecrescente(int n, int *v);//Função que popula o vetor de forma decres
 void imprimeVetor(int n, int *v);//Função que imprime os elementos de um vetor
 
 int main(){
-	clock_t t;
 	int v[tamVetor];
 	vetorAleatorio(tamVetor,v);
-	t = clock();
 	heapsort(v, tamVetor);
-	t = clock() - t;
 	imprimeVetor(tamVetor,v);
-	printf("\n Tempo de execucao: %lf",((double)t)/((CLOCKS_PER_SEC/1000)));
 	return 0;
 }
 
